@@ -1,0 +1,242 @@
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes appear {
+    to {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
+@keyframes focus {
+    from {
+        border: 3px solid transparent;
+    }
+
+    to {
+        border: 3px solid white;
+    }
+}
+
+@keyframes removeFocus {
+    from {
+        border: 3px solid white;
+    }
+
+    to {
+        border: 3px solid transparent;
+    }
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(49,48,47);
+    overflow: hidden;
+}
+
+#sun, #venus, #mercury, #earth, #moon, #mars {
+    border: 3px solid transparent;
+}
+
+.focus {
+    animation: focus 0.5s ease-in-out both;
+}
+
+.removeFocus {
+    animation: removeFocus 0.5s ease-in-out both;
+}
+
+/*PLANET STYLES */
+.solarSystem {
+    position: relative;
+}
+
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    background-color: yellow;
+    box-shadow: 0 0 15px rgb(214, 214, 53);
+}
+
+.orbit {
+    border-radius: 50%;
+}
+
+.mercuryInfo {
+    animation: rotate 3s linear infinite;
+}
+
+.mercury {
+    position: absolute;
+    left: 5em;
+    top: 50%;
+    height: 20px;
+    width: 20px;
+    background-color: rgb(255, 174, 0);
+    box-shadow: 0 0 15px rgb(214, 144, 53);
+}
+
+.venusInfo {
+    animation: rotate 7s linear infinite;
+}
+
+.venus {
+    position: absolute;
+    left: 9em;
+    top: 50%;
+    height: 20px;
+    width: 20px;
+    background-color: rgb(255, 115, 0);
+    box-shadow: 0 0 15px rgb(251, 149, 16);
+}
+
+.earthInfo {
+    animation: rotate 11.8s linear infinite;
+}
+
+.earth {
+    position: absolute;
+    left: 13em;
+    top: 50%;
+    height: 20px;
+    width: 20px;
+    background-color: blue;
+    animation: rotate 5s linear infinite;
+    box-shadow: 0 0 15px rgb(53, 104, 214);
+}
+
+.marsInfo {
+    animation: rotate 16.2s linear infinite;
+}
+
+.mars {
+    position: absolute;
+    left: 17em;
+    top: 50%;
+    height: 20px;
+    width: 20px;
+    background-color: rgb(255, 17, 0);
+    box-shadow: 0 0 15px rgb(214, 58, 53);
+}
+
+.moon {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: rgb(197, 196, 196);
+    top: 20px;
+    left: 20px;
+    box-shadow: 0 0 15px rgb(163, 162, 161);
+}
+
+#planetInfo {
+    font-size: 2em;
+    opacity: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 650px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.411);
+    bottom: 30px;
+    z-index: 50;
+    transform: translateY(200%);
+    border-radius: 15px;
+    animation: appear 1.5s ease-in-out both;
+    border: 3px solid rgb(255, 255, 255); 
+    box-shadow: 0 3px 3px white;
+}
+
+#planetInfo button{
+    background-color: rgb(80, 158, 231);
+    font-size: 1.2em;
+    padding: 0 20px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.5s;
+    cursor: pointer;
+    box-shadow: 0 5px 3px rgb(68, 133, 194);
+}
+
+#planetInfo button:hover{
+    transform: scale(1.2);
+    background-color: rgb(29, 135, 235);
+    box-shadow: 0 5px 3px rgb(51, 100, 146);
+}
+
+#planetInfo #next {
+    position: absolute;
+    right: 20px;
+}
+
+#planetInfo #previous {
+    position: absolute;
+    left: 20px;
+}
+
+.copyright {
+    bottom: 5px;
+    position: absolute;
+    font-size: 15px;
+}
+
+@media (width < 660px) {
+    #planetInfo {
+        font-size: 2em;
+        opacity: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        width: 450px;
+        height: 150px;
+        background-color: rgba(255, 255, 255, 0.411);
+        bottom: 30px;
+        z-index: 50;
+        transform: translateY(200%);
+        border-radius: 15px;
+        animation: appear 1.5s ease-in-out both;
+        border: 3px solid rgb(255, 255, 255); 
+        box-shadow: 0 3px 3px white;
+    }
+
+    #planetInfo button {
+        position: absolute;
+        transition: all 0.5s;
+    }
+
+    #planetInfo button:hover{
+        background-color: rgb(29, 135, 235);
+        box-shadow: 0 5px 3px rgb(51, 100, 146);
+    }
+
+    #planetInfo #next {
+        right: -6%;
+        transform: translate(-50%, -50%);
+    }
+
+    #planetInfo #previous {
+        left: 10%;
+        transform: translate(-50%, -50%);
+    }
+}

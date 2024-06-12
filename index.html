@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="solarSystem">
+        <div id="sun" class="sun"></div>
+
+        <div class="mercuryInfo">
+            <div id="mercury" class="mercury orbit"></div>
+        </div>
+
+        <div class="venusInfo">
+            <div id="venus" class="venus orbit"></div>
+        </div>
+
+        <div class="earthInfo">
+            <div id="earth" class="earth orbit">
+                <div id="moon" class="moon orbit"></div>
+            </div>
+        </div>
+
+        <div class="marsInfo">
+            <div id="mars" class="mars orbit"></div>
+        </div>
+    </div>
+
+    <div id="planetInfo">
+        <div id="planetName"> </div>
+        <div id="averageTemperature"> </div>
+        <button id="next" onclick="nextPlanet()">⇒</button>
+        <button id="previous" onclick="previousPlanet()">⇐</button>
+
+        <div class="copyright">Copyright © 2024 Bugsy. All Rights Reserved</div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
